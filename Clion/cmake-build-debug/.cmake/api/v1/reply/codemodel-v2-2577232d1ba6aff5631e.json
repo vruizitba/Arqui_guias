@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.30"
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Clion::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Clion-Debug-1fc5e4f6bd9a2a81233d.json",
+					"jsonFile" : "target-Clion-Debug-d3b887c8abfc48991695.json",
 					"name" : "Clion",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/valentinruiz/Documentos/ITBA_(yo)/2do_an\u0303o/2do_cuatri/Arqui/Clion/cmake-build-debug",
-		"source" : "/Users/valentinruiz/Documentos/ITBA_(yo)/2do_an\u0303o/2do_cuatri/Arqui/Clion"
+		"build" : "D:/User/Documentos/ITBA(yo)/2do a\u00f1o/2do cuatri/Arqui/guias/Arqui_guias/Clion/cmake-build-debug",
+		"source" : "D:/User/Documentos/ITBA(yo)/2do a\u00f1o/2do cuatri/Arqui/guias/Arqui_guias/Clion"
 	},
 	"version" : 
 	{

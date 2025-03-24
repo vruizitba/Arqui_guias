@@ -1,8 +1,8 @@
-# Install script for directory: /Users/valentinruiz/Documentos/ITBA_(yo)/2do_año/2do_cuatri/Arqui/Clion
+# Install script for directory: D:/User/Documentos/ITBA(yo)/2do año/2do cuatri/Arqui/guias/Arqui_guias/Clion
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Clion")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,7 +34,7 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "C:/Users/valen/AppData/Local/Programs/CLion/bin/mingw/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -52,6 +52,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "/Users/valentinruiz/Documentos/ITBA_(yo)/2do_año/2do_cuatri/Arqui/Clion/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "D:/User/Documentos/ITBA(yo)/2do año/2do cuatri/Arqui/guias/Arqui_guias/Clion/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
