@@ -1,0 +1,3 @@
+/Users/valentinruiz/Documentos/ITBA_(yo)/2do_año/2do_cuatri/Arqui/Clion/cmake-build-debug/CMakeFiles/Clion.dir
+/Users/valentinruiz/Documentos/ITBA_(yo)/2do_año/2do_cuatri/Arqui/Clion/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/valentinruiz/Documentos/ITBA_(yo)/2do_año/2do_cuatri/Arqui/Clion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
