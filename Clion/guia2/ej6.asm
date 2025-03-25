@@ -4,66 +4,69 @@ section .text
 GLOBAL _start
 
 _start:
-    mov word [value], 8 ;numero n donde sera el factorial
-    mov ebx, [value]
-    mov word [toReturn], 1 ;valor de retorno
-    mov word [nextMult], 1
+    mov ecx, [n]
+    cmp ecx, 1
+    jle base_case
 
-factorial:
-   call multiplicacion
-   inc word [nextMult]
-   dec ebx
-   jnz factorial
+    mov eax, 1
+
+    ciclo:
+        cmp ecx, 1
+        jle end
+        mul ecx
+        dec ecx
+        jmp ciclo
+
+    base_case:
+        mov eax, 1
+
+
+    end:
+        mov ebx, location
+        mov ecx, lenght
+        call to_string
+        call print
+        call exit
+
+to_string:
+    add ebx, ecx
+    dec ebx
+    mov byte [ebx], 10 ;salto de linea
+    dec ebx
+    loop:
+        xor edx, edx
+        push ecx
+        mov ecx, 10
+        div ecx
+        pop ecx
+        add edx, '0'
+        mov byte [ebx], dl
+        dec ebx
+        test eax, eax
+        jnz loop
+
+    ret
 
 print:
-
     mov eax, 4
     mov ebx, 1
-    lea ecx, [buffer]
-    mov edx, 20
+    mov ecx, location
+    mov edx, lenght
     int 80h
+
+    ret
 
 exit:
     mov eax, 1
     mov ebx, 0
     int 80h
 
-multiplicacion:
-    pusha
-    mov ebx, [toReturn]
-    mov eax, [toReturn]
-    mov edx, [nextMult]
-    loop:
-        add ebx, edx
-        dec eax
-        jnz loop
 
-    mov word [toReturn], ebx
+section .data
 
-    popa
-
-    ret
-
-num_to_str:
-    add edi, 20
-    mov byte [edi], 0
-
-convertir:
-    dec edi
-    xor edx, edx
-    mov ebx, 10
-    div ebx
-    add dl, "0"
-    mov [edi], dl
-
-    cmp eax, 0
-    jne convertir
-
-    ret
+n dd 5
+lenght equ 10
 
 section .bss
 
-toReturn resb 2
-value resb 2
-nextMult resb 2
-buffer resb 20
+location resb lenght
