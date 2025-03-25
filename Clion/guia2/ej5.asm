@@ -5,30 +5,37 @@ GLOBAL _start
 
 _start:
 
-    mov [k], 4 ;valor k
-    mov [value], 25 ; valor n
-    mov ecx, 1 ; primer valor a imprimir
-    mov edx, 0 ;contador
-
+    mov word [k], 4 ;valor k
+    mov word [value], 25 ; valor n
+    mov word [result], 0 ; primer valor a imprimir
 
 loop:
-    call nextMult ;pone en edx el proximo multiplo
-    dec [k]
-    cmp [k], 0
+    call nextMult
+    call print
+    dec word [k]
+    cmp word [k], 0
     jne loop
 
     call exit;
 
 nextMult:
-    mov eax, [value]
-    mov ebx, ecx
-    div ebx
-    inc ecx
-    cmp ebx, 0
-    jne nextMult
+    mov ax, [result]
+    add ax, [value]
+    mov [result], ax
     ret
 
-toPrint:
+print:
+    mov ax, [result]
+    lea edi, [buffer]
+    call num_to_str
+
+    mov eax, 4
+    mov ebx, 1
+    lea ecx, [buffer]
+    mov edx, 20
+    int 80h
+
+    ret
 
 
 exit:
@@ -36,15 +43,17 @@ exit:
     mov ebx, 0
     int 80h
 
+    ret
+
 num_to_str:
     add edi, 20
-    mov byte [edi], 0
+    mov byte [edi], 10
 
 convertir:
     dec edi
     xor edx, edx
-    mov ebx, 10
-    div ebx
+    mov bx, 10
+    div bx
     add dl, "0"
     mov [edi], dl
 
@@ -55,7 +64,6 @@ convertir:
 
 section .bss
     result resb 2
-    rest resb 2
     value resb 2
     k resb 2
     buffer resb 20
